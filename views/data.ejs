@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <!-- Other table headers -->
+    </tr>
+    <% items.forEach(function(item) { %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.description %></td>
+        <!-- Other table data -->
+      </tr>
+    <% }); %>
+  </table>
+</body>
+</html>
