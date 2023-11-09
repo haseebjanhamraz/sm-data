@@ -7,12 +7,14 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 const app = express();
 
+const siteName = "ANP"
+
 mongoose.set("strictQuery", false);
 
 
 // MongoDB connection
 
-mongoose.connect('mongodb://localhost:27017/smdata')
+mongoose.connect('mongodb+srv://haseebjanhamraz:haseeb@cluster0.urtdhxt.mongodb.net/?retryWrites=true&w=majority')
 // Use environment variables
 
 // Connection string to your MongoDB Atlas cluster
@@ -43,6 +45,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
+
 
 // Passport middleware
 app.use(passport.initialize());

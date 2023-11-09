@@ -1,22 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Data</title>
-</head>
-<body>
-  <table>
+<%- include('partials/header') %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Designation</th>
+    <th>Email</th>
+    <th>WhatsApp#</th>
+    <th>Phone Number</th>
+    <th>District</th>
+    <th>Constituency</th>
+    <th>Candidate</th>
+  </tr>
+  <% items.forEach(function(item) { %>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <!-- Other table headers -->
+      <td><%= item.name %></td>
+      <td><%= item.designation %></td>
+      <td><%= item.email %></td>
+      <td><%= item.whatsappNumber %></td>
+      <td><%= item.phoneNumber%></td>
+      <td><%= item.district%></td>
+      <td><%= item.constituency %></td>
+      <td><%= item.candidate %></td>
+      <!-- Other table data -->
     </tr>
-    <% items.forEach(function(item) { %>
-      <tr>
-        <td><%= item.name %></td>
-        <td><%= item.description %></td>
-        <!-- Other table data -->
-      </tr>
-    <% }); %>
-  </table>
-</body>
-</html>
+  <% }); %>
+</table>
+<%- include('partials/footer') %>

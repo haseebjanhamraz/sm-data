@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<!-- Designined by CodingLab - youtube.com/codinglabyt -->
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title> ANP Social Media Convention 2023 </title>
-    <link rel="stylesheet" href="/styles/style.css">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
-<body>
-  <div class="container">
-    <div class="logo"><img src="../images/anp-logo.jpg" alt=""></div>
-    <div class="title">ANP Social Media Registration</div>
+<%- include('partials/header') %>
+<div class="container main-menu">
     <div class="content">
         <form action="/form" method="post">
         <div class="user-details">
@@ -37,6 +26,7 @@
           <div>
             <label for="district">District:</label><br>
             <!-- Add a dropdown with three options -->
+            <div class="dropdown">
             <select id="district" name="district">
                 <option value="Abbottabad District">Abbottabad District</option>
                 <option value="Bajaur District">Bajaur District</option>
@@ -111,7 +101,7 @@
                 <option value="Hazara Division">Hazara Division</option>
                 <option value="Dera Ismail Khan Division">Dera Ismail Khan Division</option>
               </select>
-              
+            </div>
           </div>
           <div class="input-box">
             <span class="details">Tehsil</span>
@@ -142,7 +132,3 @@
     <!-- Other input fields for additional data -->
     <!-- <button type="submit">Submit</button> -->
   <!-- </form> -->
-
-</body>
-</html>
-

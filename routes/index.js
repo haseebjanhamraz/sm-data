@@ -6,7 +6,10 @@ const isAuthenticated = require('../middleware/auth'); // Assuming you have a mi
 
 
 router.get('/login', (req, res) => {
-    res.render('login'); // Render the login.ejs file in the views directory
+  if(!isAuthenticated){
+    console.log("You are already logged in")
+  }
+    res.render('login', {title: "Login"}); // Render the login.ejs file in the views directory
   });
 // Route to handle the POST request when the user submits the login form
 router.post('/login', passport.authenticate('local', {
@@ -22,9 +25,8 @@ router.get('/', (req, res) => {
 
 // Display form
 router.get('/form', isAuthenticated, (req, res) => {
-  res.render('form');
+  res.render('form', {title: "Data Entry"});
 });
-
 // Handle form submission
 router.post('/form', isAuthenticated, async (req, res) => {
   try {
@@ -48,11 +50,13 @@ router.post('/form', isAuthenticated, async (req, res) => {
   }
 });
 
+
 // Display data in table form
 router.get('/data', isAuthenticated, async (req, res) => {
   try {
+    const title = "Data Page"
     const items = await Item.find();
-    res.render('data', { items });
+    res.render('data', { items , title});
   } catch (err) {
     res.send('Error fetching data');
   }
