@@ -12,23 +12,23 @@ mongoose.set("strictQuery", false);
 
 // MongoDB connection
 
-// mongoose.connect('mongodb://localhost:27017/smdata', {
+mongoose.connect('mongodb://localhost:27017/smdata')
 // Use environment variables
 
 // Connection string to your MongoDB Atlas cluster
-const mongoURI = process.env.MONGODB_URI; // Replace with your MongoDB Atlas connection string
+// const mongoURI = process.env.MONGODB_URI; // Replace with your MongoDB Atlas connection string
 
-async function connectToDatabase() {
-  try {
-    await mongoose.connect(mongoURI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    });
-    console.log('Connected to MongoDB Atlas!');
-  } catch (error) {
-    console.error('Error connecting to MongoDB Atlas:', error);
-  }
-}
+// async function connectToDatabase() {
+//   try {
+//     await mongoose.connect(mongoURI, {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true
+//     });
+//     console.log('Connected to MongoDB Atlas!');
+//   } catch (error) {
+//     console.error('Error connecting to MongoDB Atlas:', error);
+//   }
+// }
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
